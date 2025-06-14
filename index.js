@@ -23,6 +23,9 @@ const audio=document.getElementById("audio");
 const playpausebtn=document.getElementById("playpause");
 const progress=document.getElementById("progress");
 
+audio.addEventListener("loadedmetadata", () => {
+    progress.max = audio.duration;
+});
 playpausebtn.addEventListener("click",()=>{
     if(audio.paused){
         audio.play();
@@ -35,7 +38,6 @@ playpausebtn.addEventListener("click",()=>{
 
 audio.addEventListener("timeupdate",()=>{
     progress.value=audio.currentTime;
-    progress.max=audio.duration;
 });
 
 progress.addEventListener("input",()=>{
