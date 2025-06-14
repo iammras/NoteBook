@@ -1,45 +1,29 @@
-/*const audio=document.getElementById("audio");
-const playpausebtn=document.getElementById("playpause");
-const progress=document.getElementById("progress");
+const audio = document.getElementById("audio");
+const playpausebtn = document.getElementById("playpause");
+const progress = document.getElementById("progress");
 
-playpausebtn.addEventListener("click",()=>{
-    if(audio.paused){
-        audio.play();
-         playpausebtn.textContent="pause";
-    }else{
-        audio.pause();
-         playpausebtn.textContent="play";
-    }
-});
-audio.addEventListener("timeupdate",()=>{
-  progress.value=audio.currentTime;
-  progress.max=audio.duration;
-});
-progress.addEventListener("input",()=>{
-  audio.currentTime=progress.value;
-});
-*/
-const audio=document.getElementById("audio");
-const playpausebtn=document.getElementById("playpause");
-const progress=document.getElementById("progress");
-
+// Set max value when metadata is loaded
 audio.addEventListener("loadedmetadata", () => {
     progress.max = audio.duration;
 });
-playpausebtn.addEventListener("click",()=>{
-    if(audio.paused){
+
+// Play / Pause toggle button
+playpausebtn.addEventListener("click", () => {
+    if (audio.paused) {
         audio.play();
-        playpausebtn.textContent="pause";
-    }else{
+        playpausebtn.textContent = "Pause";
+    } else {
         audio.pause();
-        playpausebtn.textContent="play";
+        playpausebtn.textContent = "Play";
     }
 });
 
-audio.addEventListener("timeupdate",()=>{
-    progress.value=audio.currentTime;
+// Update progress bar as song plays
+audio.addEventListener("timeupdate", () => {
+    progress.value = audio.currentTime;
 });
 
-progress.addEventListener("input",()=>{
-  audio.currentTime=progress.value;
+// Seek functionality when user changes slider
+progress.addEventListener("change", () => {
+    audio.currentTime = progress.value;
 });
