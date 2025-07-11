@@ -1,139 +1,116 @@
-/* Base layout */
+/* Romantic Background & Body Styling */
 body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(to right, #fce4ec, #ffffff);
+    color: #2e2e2e;
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #f5f5f5;
+    padding: 0 10%;
+    line-height: 1.8;
+    scroll-behavior: smooth;
+    background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
 }
 
-/* Image section */
+/* Heading Styles */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    color: #c2185b;
+    text-align: center;
+    font-size: 3.5em;
+    margin-top: 40px;
+    text-shadow: 1px 1px 2px #ffccd5;
+}
+
+h2, h3, h4 {
+    color: #880e4f;
+    margin-top: 30px;
+    text-shadow: 0.5px 0.5px #ffd1dc;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+/* Blockquotes for emotional moments */
+blockquote {
+    font-style: italic;
+    background: #fff0f5;
+    border-left: 5px solid #ec407a;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    color: #6a1b9a;
+    font-size: 17px;
+    box-shadow: 2px 2px 10px rgba(255, 192, 203, 0.3);
+}
+
+/* Main image container */
 .main {
     display: flex;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.main img {
-    height: 400px;
-    width: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Headings */
-.heading {
-    text-align: center;
-    color: blue;
-    font-weight: bold;
-    font-size: 2rem;
-    margin: 20px 0;
-}
-
-/* Story content */
-.content {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
-    margin: 0 15px;
-    text-align: justify;
-    line-height: 1.6;
-}
-
-/* Audio player */
-.player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 40px 0;
 }
 
-button {
-    padding: 12px 24px;
-    font-size: 18px;
-    margin-bottom: 10px;
+.main img {
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.main img:hover {
+    transform: scale(1.03);
+}
+
+/* Audio player design */
+.player {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#playpause {
+    background: linear-gradient(to right, #ff4d4d, #e91e63);
+    color: white;
     border: none;
-    border-radius: 4px;
-    background-color: crimson;
-    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
-    background-color: darkred;
+#playpause:hover {
+    background: #c2185b;
 }
 
-input[type=range] {
-    width: 300px;
+#progress {
+    width: 70%;
+    margin-top: 10px;
+    accent-color: #e91e63;
 }
 
 /* Footer */
 .footer {
+    background-color: #f8bbd0;
     text-align: center;
-    color: white;
-    background-color: blue;
-    margin: 30px 10px 0;
-    padding: 12px 0;
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #880e4f;
+    margin-top: 50px;
+    border-top: 1px dashed #ad1457;
+    font-size: 15px;
 }
 
-/* RESPONSIVE DESIGN */
-
-/* For tablets and phones */
-@media screen and (max-width: 768px) {
-    .main img {
-        height: 250px;
-        width: 160px;
-    }
-
-    .heading {
-        font-size: 1.5rem;
-    }
-
-    .content {
-        font-size: 1rem;
-        margin: 0 10px;
-    }
-
-    input[type=range] {
-        width: 200px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-}
-
-/* For very small phones */
-@media screen and (max-width: 480px) {
-    .main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main img {
-        height: 220px;
-        width: 90%;
-    }
-
-    .heading {
-        font-size: 1.3rem;
-    }
-
-    .content {
-        font-size: 0.95rem;
-    }
-
-    input[type=range] {
-        width: 180px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 18px;
-    }
+/* Romantic container highlight (optional) */
+.lovebox {
+    background-color: #fff0f5;
+    border: 2px dashed #ec407a;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 40px 0;
+    box-shadow: 0 0 12px rgba(255, 192, 203, 0.3);
 }

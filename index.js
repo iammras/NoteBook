@@ -2,6 +2,7 @@ const audio = document.getElementById("audio");
 const playpausebtn = document.getElementById("playpause");
 const progress = document.getElementById("progress");
 
+
 // Set max value when metadata is loaded
 audio.addEventListener("loadedmetadata", () => {
     progress.max = audio.duration;
@@ -26,4 +27,16 @@ audio.addEventListener("timeupdate", () => {
 // Seek functionality when user changes slider
 progress.addEventListener("change", () => {
     audio.currentTime = progress.value;
+});
+
+
+document.getElementById('hide').addEventListener('click',()=>{
+  if(document.querySelector('#hide').innerHTML==='Hide'){  
+  document.querySelector('.lovebox').style.display='none';
+  document.getElementById('hide').innerHTML='Show';
+  document
+  }else{
+    document.querySelector('.lovebox').style.display='block';
+    document.getElementById('hide').innerHTML='Hide';
+  }
 });
